@@ -1,0 +1,2 @@
+# mydjangoblog
+django first
