@@ -4,7 +4,7 @@ body {
     background-image: url(stars.png);
     color:white
 }
-body *{
+body {
     font-family:arial;
 }
 h1,h2,h3,h4,h5{
