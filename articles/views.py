@@ -6,5 +6,5 @@ def articlesList(request):
 
     return render(request, 'articles/articleslist.html',{'articles':articles})
     
-def article_datail(request, slug):
+def article_detail(request, slug):
     return HttpResponse(slug)

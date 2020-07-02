@@ -1,18 +1,16 @@
-{% load static %}
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>articles list</title>
-        <link rel="stylesheet" href="{% static 'styles.css' %}"/>
-    </head>
-    <body>
+{% extends 'base.html' %}
+
+{% block title %}
+articles List
+{% endblock %}
+
+{% block content %}
       <div class="conrainer">
         <h1>List of Articles</h1>
         {% for i in articles %}
-        <h2><a href="#">{{i.title}}</a></h2>
+        <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{i.title}}</a></h2>
         <p>{{i.preview}}</p>
         <p>{{i.date}}</p>
         {% endfor %}
       </div>
-    </body>
-</html>
+{% endblock %}    
