@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
- 
+from articles import isPrime
 
 def about(request):
     #return HttpResponse('hi there')
@@ -13,3 +13,4 @@ def home(request):
 def mainRoom(request):
     #return HttpResponse('main room is here!')
     return render(request, 'mainRoom.html')
+

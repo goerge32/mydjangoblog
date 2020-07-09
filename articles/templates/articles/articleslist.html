@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
+{%extends 'base.html'%}
+{%block title%}
+articles
+{%endblock%}
 
-{% block title %}
-articles List
-{% endblock %}
+{%block content%}
+<div class="container">
+  <h1>Articles List</h1>
+  {% for article in articles %}
+  <h2><a href="{% url 'articles:detail' slug=article.body %}">{{article.title}}</a></h2>
+  <p>{{article.preview}}</p>
+  <p>{{article.date}}</p>
+  {% endfor %}
+</div>
+{%endblock%}
 
-{% block content %}
-      <div class="conrainer">
-        <h1>List of Articles</h1>
-        {% for i in articles %}
-        <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{i.title}}</a></h2>
-        <p>{{i.preview}}</p>
-        <p>{{i.date}}</p>
-        {% endfor %}
-      </div>
-{% endblock %}    
