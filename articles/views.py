@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from . import models,isPrime
+from . import models
 # Create your views here.
 def articlesList(request):
     articles = models.Article.objects.all().order_by('date')
@@ -7,5 +7,8 @@ def articlesList(request):
     return render(request, 'articles/articleslist.html',{'articles':articles})
     
 def article_detail(request, slug):
-    return HttpResponse(slug)
+    # return HttpResponse(slug)
+    article = models.Article.objects.get(slug=slug)
+    return render(request , 'articles/article_detail.html', {'article':article})
+
 
